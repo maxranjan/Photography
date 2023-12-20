@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+.features ul {
+    font-size: x-large;
+    color: black;
+}
+
+.features .a h5 {
+    background-color: rgb(235, 240, 91);
+    width: 160px;
+    border-radius: 5px;
+    padding: 2px;
+    font-size: large;
+}
+
+.features .b h5 {
+    background-color: rgb(235, 240, 91);
+    width: 165px;
+    border-radius: 5px;
+    padding: 2px;
+    font-size: large;
+}
+
+.features .c h5 {
+    background-color: rgb(235, 240, 91);
+    width: 175px;
+    border-radius: 5px;
+    padding: 2px;
+    font-size: large;
+}
+
+.features h6 {
+    text-align: center;
+    font-size: 25px;
+    padding-top: 10px;
+}
+
+.features ul p {
+    font-size: 18px;
+
+}
+
+h1 {
+    text-align: center;
+    color: red;
+    font-size: x-large;
+}
