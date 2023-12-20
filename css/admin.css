@@ -5,3 +5,11 @@
     text-decoration: underline;
     text-transform: uppercase;
 }
+
+i {
+    cursor: pointer;
+}
+
+i.delete-icon:hover {
+    color: red;
+}
