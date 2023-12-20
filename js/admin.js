@@ -74,7 +74,7 @@ if (sessionStorage.getItem('login') == 'success') {
         <div class="text-center">
             <button type="button" class="btn btn-primary m-1" id="fetch-button" onclick="fetchDataFromServer()">Fetch Data</button>
             <button type="button" class="btn btn-primary m-1" id="logout-button" onclick="logout()">Logout</button>
-            <button type="button" class="btn btn-primary m-1" id="logout-button" onclick="window.location.href='/'">Home</button>
+            <button type="button" class="btn btn-primary m-1" id="logout-button" onclick="window.location.href='/Photography'">Home</button>
         <div>
 
         <div id="loading-svg" style="display: none;">
