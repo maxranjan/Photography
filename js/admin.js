@@ -25,6 +25,10 @@ const fetchDataFromServer = () => {
                     td.innerText = item;
                     tr.appendChild(td);
                 }
+                let deleteElementTd = document.createElement('td');
+                deleteElementTd.innerHTML = '<i class="material-icons icons delete-icon" onclick="deleteRow(this)">delete</i>'
+                tr.appendChild(deleteElementTd)
+
                 let td = document.createElement('td');
                 td.innerHTML = `
                 <a href="https://rdsbca.pythonanywhere.com/api/contact-form/${tuple[0]}" target="_blank"><i class="material-icons icons registrationIcons">open_in_new</i></a>
@@ -87,6 +91,7 @@ if (sessionStorage.getItem('login') == 'success') {
                         <th scope="col">First Name</th>
                         <th scope="col">Last Name</th>
                         <th scope="col">Country</th>
+                        <th scope="col">Delete</th>
                         <th scope="col">Detail</th>
                     </tr>
                 </thead>
@@ -113,4 +118,24 @@ else {
 const logout = () => {
     sessionStorage.removeItem('login');
     window.location.href = window.location.href;
+}
+
+
+const deleteRow = (element) => {
+    const id = element.parentElement.parentElement.children[1].innerText
+    fetch(`https://rdsbca.pythonanywhere.com/api/contact-form/${id}`, { method: 'DELETE' })
+        .then(res => {
+            if (res.ok) {
+                responseText = res.text().then((responseText) => {
+                    console.log("Server Response: ", responseText);
+                    if (responseText.includes('success')) {
+                        element.parentElement.parentElement.remove()
+                    }
+                    else {
+                        alert('Unable to delete the data. Please try again later');
+                    }
+                })
+            }
+        })
+
 }
